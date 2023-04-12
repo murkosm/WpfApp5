@@ -7,36 +7,15 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="" Height="450" Width="800">
-   
-    
-    
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1"
-                Height="150"
-                Width="150" Margin="192,128,458,156"/>
-        <Image x:Name="qr_code"
-                Height="150"
-                Width="150" Margin="192,128,458,156"/>
-        <TextBox HorizontalAlignment="Left" 
-                 Margin="400,94,0,0" 
-                 TextWrapping="Wrap" Text="Name" FontSize="20"
-                 VerticalAlignment="Top" Width="162" Height="27"/>
-        <TextBox HorizontalAlignment="Left" 
-                 Margin="400,142,0,0" 
-                 TextWrapping="Wrap" Text="Price" FontSize="20"
-                 VerticalAlignment="Top" Width="162" Height="27"/>
-        <TextBox HorizontalAlignment="Left" 
-                 Margin="400,189,0,0" 
-                 TextWrapping="Wrap" Text="Description" FontSize="20"
-                 VerticalAlignment="Top" Width="162" Height="28"/>
-        <Button x:Name="btn_click" Content="Edit" FontSize="20" 
-                HorizontalAlignment="Left" 
-                Margin="400,289,0,0" VerticalAlignment="Top" Width="162"/>
-        <Button x:Name="btn_add" Content="Add" FontSize="20" 
-                HorizontalAlignment="Left" 
-                Margin="400,325,0,0" VerticalAlignment="Top" Width="162"/>
-        <Button x:Name="btn_gen" Content="Generate" FontSize="20" 
-                HorizontalAlignment="Left" 
-                Margin="400,232,0,0" VerticalAlignment="Top" Width="162"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="0"/>
+        <Button x:Name="btn_add" Content="Add" FontSize="20" Margin="0,384,529,0" Grid.RowSpan="2"/>
+        <Button x:Name="btn_edit" Content="Edit" FontSize="20" Width="266" Margin="271,384,263,0" Grid.RowSpan="2"/>
+        <Button x:Name="btn_delete" Content="Delete" FontSize="20" Width="266" Margin="534,384,0,0" Grid.RowSpan="2"/>
+        
     </Grid>
 </Window>

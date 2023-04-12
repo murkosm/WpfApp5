@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfApp5
 {
     /// <summary>
-    /// Логика взаимодействия для EditWindow.xaml
+    /// Логика взаимодействия для MAainWindow1.xaml
     /// </summary>
-    public partial class EditWindow : Window
+    public partial class MAainWindow1 : Window
     {
-        public EditWindow()
+        public MAainWindow1()
         {
             InitializeComponent();
         }
