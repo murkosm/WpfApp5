@@ -6,16 +6,15 @@
         xmlns:local="clr-namespace:WpfApp5"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="" Height="450" Width="800">
+        Title="" Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="0"/>
-        <Button x:Name="btn_add" Content="Add" FontSize="20" Margin="0,384,529,0" Grid.RowSpan="2"/>
-        <Button x:Name="btn_edit" Content="Edit" FontSize="20" Width="266" Margin="271,384,263,0" Grid.RowSpan="2"/>
-        <Button x:Name="btn_delete" Content="Delete" FontSize="20" Width="266" Margin="534,384,0,0" Grid.RowSpan="2"/>
-        
+        <ListBox x:Name="Product" Grid.Row="0"/> 
+        <Button x:Name="btn_add" Click="Btn_add_Click" Content="Add" FontSize="20" Margin="0,384,529,0" Grid.RowSpan="2"/>
+        <Button x:Name="btn_edit" Click="Btn_edit_Click" Content="Edit" FontSize="20" Width="266" Margin="271,384,263,0" Grid.RowSpan="2"/>
+        <Button x:Name="btn_delete" Click="Btn_delete_Click" Content="Delete" FontSize="20" Width="266" Margin="534,384,0,0" Grid.RowSpan="2"/>
     </Grid>
 </Window>

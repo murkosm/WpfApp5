@@ -19,11 +19,32 @@ namespace WpfApp5
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
+
     {
+
         public MainWindow()
         {
+
             InitializeComponent();
+           
+         
         }
 
+        private void Btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            Window1.Window1 add = new Window1.Window1();
+            add.Show();
+        }
+
+        private void Btn_edit_Click(object sender, RoutedEventArgs e)
+        {
+            Window1.EditWindow edit = new Window1.EditWindow();
+            edit.Show();
+        }
+
+        private void Btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

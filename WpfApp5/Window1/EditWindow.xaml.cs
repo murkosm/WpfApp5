@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WpfApp5
+namespace WpfApp5.Window1
 {
     /// <summary>
-    /// Логика взаимодействия для MAainWindow1.xaml
+    /// Логика взаимодействия для EditWindow.xaml
     /// </summary>
-    public partial class MAainWindow1 : Window
+    public partial class EditWindow : Window
     {
-        public MAainWindow1()
+        public EditWindow()
         {
             InitializeComponent();
         }
