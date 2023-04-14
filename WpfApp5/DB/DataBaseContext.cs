@@ -13,7 +13,7 @@ namespace WpfApp5.DB
         public DbSet<Product> Products { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqLite("Data Source = skz.db");
+            optionsBuilder.UseSqlite("Data Source = skz.db");
         }
 
     }
