@@ -12,7 +12,24 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="Product" Grid.Row="0"/> 
+        <ScrollViewer>
+            <ListBox x:Name="selectProduct" Grid.Row="0" ItemsSource="{Binding SelectProduct}" SelectedItem="{Binding Product}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="Name"/>
+                            <TextBlock Text="{Binding Path=Name}"/>
+                            <TextBlock Text="Price"/>
+                            <TextBlock Text="{Binding Path=Price}"/>
+                            <TextBlock Text="Description"/>
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <TextBlock Text="{Binding Path=QrCode}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+
         <Button x:Name="btn_add" Click="Btn_add_Click" Content="Add" FontSize="20" Margin="0,384,529,0" Grid.RowSpan="2"/>
         <Button x:Name="btn_edit" Click="Btn_edit_Click" Content="Edit" FontSize="20" Width="266" Margin="271,384,263,0" Grid.RowSpan="2"/>
         <Button x:Name="btn_delete" Click="Btn_delete_Click" Content="Delete" FontSize="20" Width="266" Margin="534,384,0,0" Grid.RowSpan="2"/>
