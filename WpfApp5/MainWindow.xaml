@@ -9,8 +9,9 @@
         Title="" Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="85.04">
+            </RowDefinition>
         </Grid.RowDefinitions>
         <ScrollViewer>
             <ListBox x:Name="selectProduct" Grid.Row="0" ItemsSource="{Binding SelectProduct}" SelectedItem="{Binding Product}">
@@ -23,15 +24,18 @@
                             <TextBlock Text="{Binding Path=Price}"/>
                             <TextBlock Text="Description"/>
                             <TextBlock Text="{Binding Path=Description}"/>
-                            <TextBlock Text="{Binding Path=QrCode}"/>
+                            <TextBlock Text="QR Code"/>
+                            <Image x:Name="image_qrcode" Source="{Binding Path=QrCode}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </ScrollViewer>
 
-        <Button x:Name="btn_add" Click="Btn_add_Click" Content="Add" FontSize="20" Margin="0,384,529,0" Grid.RowSpan="2"/>
-        <Button x:Name="btn_edit" Click="Btn_edit_Click" Content="Edit" FontSize="20" Width="266" Margin="271,384,263,0" Grid.RowSpan="2"/>
-        <Button x:Name="btn_delete" Click="Btn_delete_Click" Content="Delete" FontSize="20" Width="266" Margin="534,384,0,0" Grid.RowSpan="2"/>
+        <Button  x:Name="btn_add" Click="Btn_add_Click" Content="Add" FontSize="20" Margin="0,3,529,0" Grid.Row="1"/>
+        <Button x:Name="btn_edit" Click="Btn_edit_Click" Content="Edit" FontSize="20" Margin="271,3,263,0" Grid.Row="1"/>
+        <Button x:Name="btn_delete" Click="Btn_delete_Click" Content="Delete" FontSize="20" Margin="534,3,0,0" Grid.Row="1"/>
+
+
     </Grid>
 </Window>

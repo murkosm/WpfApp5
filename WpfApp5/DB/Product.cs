@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Common;
 using System.Windows.Media.Imaging;
 
@@ -13,6 +15,7 @@ namespace WpfApp5.DB
         public double Price { get; set; }
         public string Description { get; set; }
 
+        [NotMapped]
         public BitmapImage QrCode { get; set; }
     }
 }

@@ -7,33 +7,26 @@
         mc:Ignorable="d"
         Title="EditWindow" Height="450" Width="800">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1"
-                Height="150"
-                Width="150" Margin="192,128,458,156"/>
-        <Image x:Name="qr_code"
-                Height="150"
-                Width="150" Margin="192,128,458,156"/>
-        <TextBox HorizontalAlignment="Left" 
-                 Margin="400,142,0,0" 
+
+        <TextBox HorizontalAlignment="Center" 
+                 Margin="0,142,0,0" 
                  TextWrapping="Wrap" Text="Price" FontSize="20"
                  VerticalAlignment="Top" Width="162" Height="27"/>
-        <TextBox HorizontalAlignment="Left" 
-                 Margin="400,189,0,0" 
+        <TextBox HorizontalAlignment="Center" 
+                 Margin="0,174,0,0" 
                  TextWrapping="Wrap" Text="Description" FontSize="20"
                  VerticalAlignment="Top" Width="162" Height="28"/>
         <Button x:Name="btn_edit" Content="Edit" FontSize="20" 
-                HorizontalAlignment="Left" 
-                Margin="400,279,0,0" VerticalAlignment="Top" Width="162"/>
-        <Button x:Name="btn_gen" Content="Generate" FontSize="20" 
-                HorizontalAlignment="Left" 
-                Margin="400,232,0,0" VerticalAlignment="Top" Width="162"/>
-        <TextBox HorizontalAlignment="Left" 
-                 Margin="400,76,0,0" 
+                HorizontalAlignment="Center" 
+                Margin="0,243,0,0" VerticalAlignment="Top" Width="162"/>
+        <TextBox HorizontalAlignment="Center" 
+                 Margin="0,78,0,0" 
                  TextWrapping="Wrap" Text="Name" FontSize="20"
                  VerticalAlignment="Top" Width="162" Height="27"/>
-        <TextBox HorizontalAlignment="Left" 
-                 Margin="400,110,0,0" 
+        <TextBox HorizontalAlignment="Center" 
+                 Margin="0,110,0,0" 
                  TextWrapping="Wrap" Text="Id" FontSize="20"
                  VerticalAlignment="Top" Width="162" Height="27"/>
+   
     </Grid>
 </Window>
