@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp5.DB;
 
 namespace WpfApp5.Window1
 {
@@ -19,9 +20,19 @@ namespace WpfApp5.Window1
     /// </summary>
     public partial class EditWindow : Window
     {
-        public EditWindow()
+       public Product Product { get; set; }
+        public EditWindow(Product product)
         {
             InitializeComponent();
+            Product = product;
+            DataContext = Product;
+        }
+
+        private void btn_edit_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            Close();
         }
     }
+
 }

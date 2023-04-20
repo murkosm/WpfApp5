@@ -83,6 +83,7 @@ namespace WpfApp5
 
         private void Btn_edit_Click(object sender, RoutedEventArgs e)
         {
+            var product = selectProduct.SelectedItem as Product;
             Window1.EditWindow edit = new Window1.EditWindow();
             edit.Show();
         }
