@@ -25,7 +25,7 @@
                             <TextBlock Text="Description"/>
                             <TextBlock Text="{Binding Path=Description}"/>
                             <TextBlock Text="QR Code"/>
-                            <Image x:Name="image_qrcode" Source="{Binding Path=QrCode}"/>
+                            <Image x:Name="image_qrcode" Source="{Binding Path=QrCode}" Height="100" Width="100"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

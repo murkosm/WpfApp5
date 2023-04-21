@@ -35,36 +35,35 @@ namespace WpfApp5.Window1
             DataContext = product;
         }
 
-        //public static string AddProduct(Guid Id , string Name , double Price , string Description)
-        //{
-        //    string result = "fkfjfjfj";
-        //    using (DataBaseContext db = new DataBaseContext())
-        //    {
-        //        db.Database.Migrate();
-        //        bool check = db.Products.Any(el => el.Name == Name && el.Price == Price && el.Description == Description);
-        //        if (!check)
-        //        {
-        //            Product newproduct = new Product
-        //            {
-        //                Name = Name,
-        //                Price = Price,
-        //                Description = Description,
-        //                Id = new Guid()
-        //            };
-        //            db.Products.Add(newproduct);
-        //            db.SaveChanges();
-        //            result = "done";
-        //        }
-        //        return result;
-        //    }
-        //}
+        public static string AddProduct(Guid Id, string Name, double Price, string Description)
+        {
+            string result = "fkfjfjfj";
+            using (DataBaseContext db = new DataBaseContext())
+            {
+                db.Database.Migrate();
+                bool check = db.Products.Any(el => el.Name == Name && el.Price == Price && el.Description == Description);
+                if (!check)
+                {
+                    Product newproduct = new Product
+                    {
+                        Name = Name,
+                        Price = Price,
+                        Description = Description,
+                        Id = new Guid()
+                    };
+                    db.Products.Add(newproduct);
+                    db.SaveChanges();
+                    result = "done";
+                }
+                return result;
+            }
+        }
         private void Btn_add_Click(object sender, RoutedEventArgs e)
         {
             AddProduct(product.Id, product.Name, product.Price, product.Description);
             MainWindow mainWindow = new MainWindow();
             Close();
             mainWindow.ShowDialog();
-
         }
 
     

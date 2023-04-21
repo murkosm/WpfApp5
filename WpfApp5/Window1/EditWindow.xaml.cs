@@ -34,5 +34,4 @@ namespace WpfApp5.Window1
             Close();
         }
     }
-
 }

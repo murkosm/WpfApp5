@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp5.DB;
+
 
 namespace WpfApp5
 {
@@ -51,21 +53,22 @@ namespace WpfApp5
             foreach (Product product in products)
             {
                 string str = "Id " + product.Id + "\n" + "Name: " + product.Name + "\n" + "Price: " + product.Price + "₽" + "\n" + "Description: " + product.Description;
-                QRCoder.QRCodeGenerator qr = new QRCoder.QRCodeGenerator();
-                QRCoder.QRCodeData data = qr.CreateQrCode(str, QRCoder.QRCodeGenerator.ECCLevel.L);
-                QRCoder.QRCode code = new QRCoder.QRCode(data);
-                Bitmap bitmap = code.GetGraphic(100);
-                using (MemoryStream memory = new MemoryStream())
+                QRCodeGenerator qr = new QRCodeGenerator();
+                QRCodeData data = qr.CreateQrCode(str, QRCodeGenerator.ECCLevel.L);
+                QRCode qR = new QRCode(data);
+                BitmapImage qrCodeImage = new BitmapImage();
+                Bitmap bitmap = qR.GetGraphic(100);
+                
+                using (MemoryStream stream = new MemoryStream())
                 {
-                    bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
-                    memory.Position = 0;
-                    BitmapImage bitmapimage = new BitmapImage();
-                    bitmapimage.BeginInit();
-                    bitmapimage.StreamSource = memory;
-                    bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
-                    bitmapimage.EndInit();
-                    
+                    qR.GetGraphic(100).Save(stream, ImageFormat.Png);
+                    stream.Seek(0, SeekOrigin.Begin);
+                    qrCodeImage.BeginInit();
+                    qrCodeImage.CacheOption = BitmapCacheOption.OnLoad;
+                    qrCodeImage.StreamSource = stream;
+                    qrCodeImage.EndInit();
                 }
+
 
                 SelectProduct.Add(new Product { Name = product.Name, Description = product.Description, Id = product.Id, Price = product.Price, QrCode = product.QrCode });
             }
@@ -74,18 +77,34 @@ namespace WpfApp5
 
         }
 
+        public BitmapImage Convert(Bitmap src)
+        {
+            MemoryStream ms = new MemoryStream();
+            ((System.Drawing.Bitmap)src).Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            ms.Seek(0, SeekOrigin.Begin);
+            image.StreamSource = ms;
+            image.EndInit();
+            return image;  
+        }
+
         private void Btn_add_Click(object sender, RoutedEventArgs e)
         {
 
             Window1.Window1 add = new Window1.Window1();
             add.Show();
+          
         }
 
         private void Btn_edit_Click(object sender, RoutedEventArgs e)
         {
             var product = selectProduct.SelectedItem as Product;
-            Window1.EditWindow edit = new Window1.EditWindow();
+            Window1.EditWindow edit = new Window1.EditWindow(product);
             edit.Show();
+            MainWindow mainWindow = new MainWindow();
+            Close();
+            mainWindow.ShowDialog();
         }
 
         private void Btn_delete_Click(object sender, RoutedEventArgs e)
