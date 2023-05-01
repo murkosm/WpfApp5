@@ -25,13 +25,15 @@ namespace WpfApp5.Window1
         {
             InitializeComponent();
             Product = product;
-            DataContext = Product;
+            DataContext = product;
         }
 
-        private void btn_edit_Click(object sender, RoutedEventArgs e)
+        private void Btn_edit_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
+            MainWindow mainWindow = new MainWindow();
             Close();
         }
+
     }
 }

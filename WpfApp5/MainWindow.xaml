@@ -9,33 +9,31 @@
         Title="" Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="85.04">
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*">
             </RowDefinition>
         </Grid.RowDefinitions>
-        <ScrollViewer>
-            <ListBox x:Name="selectProduct" Grid.Row="0" ItemsSource="{Binding SelectProduct}" SelectedItem="{Binding Product}">
+
+
+        <Button  Grid.Row="0" x:Name="btn_add" Click="Btn_add_Click" Content="Add" FontSize="20" RenderTransformOrigin="0.491,0.559" Width="NaN" Margin="274,0,271,0"/>
+        <Button Grid.Row="0" x:Name="btn_edit" Click="Btn_edit_Click" Content="Edit" FontSize="20" RenderTransformOrigin="0.513,-0.635" Height="NaN" Width="NaN" Margin="0,0,531,0" />
+        <Button Grid.Row="0" x:Name="btn_delete" Click="Btn_delete_Click" Content="Delete" FontSize="20" Height="NaN" Margin="534,0,0,0"/>
+
+        <ScrollViewer Grid.Row="1">
+            <ListBox x:Name="selectProduct" Grid.Row="1" ItemsSource="{Binding SelectProduct}" SelectedItem="{Binding Product}">
                 <ListBox.ItemTemplate>
-                    <DataTemplate>
+                <DataTemplate>
                         <StackPanel>
-                            <TextBlock Text="Name"/>
-                            <TextBlock Text="{Binding Path=Name}"/>
-                            <TextBlock Text="Price"/>
-                            <TextBlock Text="{Binding Path=Price}"/>
-                            <TextBlock Text="Description"/>
-                            <TextBlock Text="{Binding Path=Description}"/>
-                            <TextBlock Text="QR Code"/>
-                            <Image x:Name="image_qrcode" Source="{Binding Path=QrCode}" Height="100" Width="100"/>
+                            <Image HorizontalAlignment="Left" Source="{Binding QrCode}" Height="100" Width="100"/>
+                            <TextBlock Text="Name:" />
+                            <TextBlock Text="Price:"/>
+                            <TextBlock Text="{Binding Price}"/>
+                            <TextBlock Text="Description:"/>
+                            <TextBlock Text="{Binding Description}"/>
                         </StackPanel>
                     </DataTemplate>
-                </ListBox.ItemTemplate>
+                </ListBox.ItemTemplate>                           
             </ListBox>
         </ScrollViewer>
-
-        <Button  x:Name="btn_add" Click="Btn_add_Click" Content="Add" FontSize="20" Margin="0,3,529,0" Grid.Row="1"/>
-        <Button x:Name="btn_edit" Click="Btn_edit_Click" Content="Edit" FontSize="20" Margin="271,3,263,0" Grid.Row="1"/>
-        <Button x:Name="btn_delete" Click="Btn_delete_Click" Content="Delete" FontSize="20" Margin="534,3,0,0" Grid.Row="1"/>
-
-
     </Grid>
 </Window>

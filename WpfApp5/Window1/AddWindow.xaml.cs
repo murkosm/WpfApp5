@@ -50,6 +50,7 @@ namespace WpfApp5.Window1
                         Price = Price,
                         Description = Description,
                         Id = new Guid()
+
                     };
                     db.Products.Add(newproduct);
                     db.SaveChanges();
@@ -57,15 +58,15 @@ namespace WpfApp5.Window1
                 }
                 return result;
             }
+        
         }
         private void Btn_add_Click(object sender, RoutedEventArgs e)
         {
+           
             AddProduct(product.Id, product.Name, product.Price, product.Description);
             MainWindow mainWindow = new MainWindow();
             Close();
             mainWindow.ShowDialog();
         }
-
-    
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp5.Window1"
         mc:Ignorable="d"
-        Title="EditWindow" Height="450" Width="800">
+        Title="Edit Product" Height="450" Width="800">
     <Grid>
 
         <TextBlock HorizontalAlignment="Left" 
@@ -31,7 +31,7 @@
                  Margin="0,174,0,0" 
                  TextWrapping="Wrap" Text="{Binding Description}" FontSize="20"
                  VerticalAlignment="Top" Width="162" Height="28"/>
-        <Button x:Name="btn_edit" Click="btn_edit_Click" Content="Edit" FontSize="20" 
+        <Button x:Name="btn_edit" Click="Btn_edit_Click" Content="Edit" FontSize="20" 
                 HorizontalAlignment="Center" 
                 Margin="0,243,0,0" VerticalAlignment="Top" Width="162"/>
        
